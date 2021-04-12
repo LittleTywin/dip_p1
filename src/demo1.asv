@@ -1,0 +1,4 @@
+load march.mat
+RGB = bayer2rgb(x);
+RedMask=[1/4 1/2 1/4;1/2 1 1/2; 1/4 1/2 1]
+imshow(RGB)
