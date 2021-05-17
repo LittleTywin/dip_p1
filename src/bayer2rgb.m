@@ -1,18 +1,20 @@
 function [xrgb] = bayer2rgb(xb)
 [M,N] = size(xb);
 xrgb = zeros(M,N,3);
+%red indices
 ir=2:2:M;
 jr=1:2:N;
+%blue indices
 ib=1:2:M;
 jb=2:2:N;
 
-%red
+%red pixels
 xrgb(ir,jr,1)=xb(ir,jr);
-% green
+%green pixels, setting red and blue zero
 xrgb(:,:,2)=xb;
 xrgb(ir,jr,2)=0;
 xrgb(ib,jb,2)=0;
-%blue
+%blue pixels
 xrgb(ib,jb,3)=xb(ib,jb);
 
 rbMask=[1/4 1/2 1/4;1/2 1 1/2;1/4 1/2 1/4];
