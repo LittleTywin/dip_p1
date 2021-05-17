@@ -1,6 +1,8 @@
+results/
 *.asv
 .git
 *.pdf
 **.ppm
 *test*
 *.zip
+*.odt
